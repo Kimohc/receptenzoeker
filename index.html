@@ -1,0 +1,532 @@
+<!DOCTYPE html><html><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style id="vuetify-theme-stylesheet">:root {
+      --v-theme-background: 255,253,231;
+      --v-theme-background-overlay-multiplier: 1;
+      --v-theme-surface: 255,255,255;
+      --v-theme-surface-overlay-multiplier: 1;
+      --v-theme-surface-bright: 255,255,255;
+      --v-theme-surface-bright-overlay-multiplier: 1;
+      --v-theme-surface-light: 238,238,238;
+      --v-theme-surface-light-overlay-multiplier: 1;
+      --v-theme-surface-variant: 66,66,66;
+      --v-theme-surface-variant-overlay-multiplier: 2;
+      --v-theme-on-surface-variant: 238,238,238;
+      --v-theme-primary: 76,175,80;
+      --v-theme-primary-overlay-multiplier: 1;
+      --v-theme-primary-darken-1: 31,85,146;
+      --v-theme-primary-darken-1-overlay-multiplier: 2;
+      --v-theme-secondary: 255,235,59;
+      --v-theme-secondary-overlay-multiplier: 1;
+      --v-theme-secondary-darken-1: 1,135,134;
+      --v-theme-secondary-darken-1-overlay-multiplier: 1;
+      --v-theme-error: 244,67,54;
+      --v-theme-error-overlay-multiplier: 1;
+      --v-theme-info: 33,150,243;
+      --v-theme-info-overlay-multiplier: 1;
+      --v-theme-success: 76,175,80;
+      --v-theme-success-overlay-multiplier: 1;
+      --v-theme-warning: 255,152,0;
+      --v-theme-warning-overlay-multiplier: 1;
+      --v-theme-on-background: 0,0,0;
+      --v-theme-on-surface: 0,0,0;
+      --v-theme-on-surface-bright: 0,0,0;
+      --v-theme-on-surface-light: 0,0,0;
+      --v-theme-on-primary: 255,255,255;
+      --v-theme-on-primary-darken-1: 255,255,255;
+      --v-theme-on-secondary: 0,0,0;
+      --v-theme-on-secondary-darken-1: 255,255,255;
+      --v-theme-on-error: 255,255,255;
+      --v-theme-on-info: 255,255,255;
+      --v-theme-on-success: 255,255,255;
+      --v-theme-on-warning: 0,0,0;
+      --v-border-color: 0, 0, 0;
+      --v-border-opacity: 0.12;
+      --v-high-emphasis-opacity: 0.87;
+      --v-medium-emphasis-opacity: 0.6;
+      --v-disabled-opacity: 0.38;
+      --v-idle-opacity: 0.04;
+      --v-hover-opacity: 0.04;
+      --v-focus-opacity: 0.12;
+      --v-selected-opacity: 0.08;
+      --v-activated-opacity: 0.12;
+      --v-pressed-opacity: 0.12;
+      --v-dragged-opacity: 0.08;
+      --v-theme-kbd: 33, 37, 41;
+      --v-theme-on-kbd: 255, 255, 255;
+      --v-theme-code: 245, 245, 245;
+      --v-theme-on-code: 0, 0, 0;
+      --v-font-family: Poppins, sans-serif;
+    }
+    .v-theme--light {
+      color-scheme: normal;
+      --v-theme-background: 255,255,255;
+      --v-theme-background-overlay-multiplier: 1;
+      --v-theme-surface: 255,255,255;
+      --v-theme-surface-overlay-multiplier: 1;
+      --v-theme-surface-bright: 255,255,255;
+      --v-theme-surface-bright-overlay-multiplier: 1;
+      --v-theme-surface-light: 238,238,238;
+      --v-theme-surface-light-overlay-multiplier: 1;
+      --v-theme-surface-variant: 66,66,66;
+      --v-theme-surface-variant-overlay-multiplier: 2;
+      --v-theme-on-surface-variant: 238,238,238;
+      --v-theme-primary: 24,103,192;
+      --v-theme-primary-overlay-multiplier: 2;
+      --v-theme-primary-darken-1: 31,85,146;
+      --v-theme-primary-darken-1-overlay-multiplier: 2;
+      --v-theme-secondary: 72,169,166;
+      --v-theme-secondary-overlay-multiplier: 1;
+      --v-theme-secondary-darken-1: 1,135,134;
+      --v-theme-secondary-darken-1-overlay-multiplier: 1;
+      --v-theme-error: 176,0,32;
+      --v-theme-error-overlay-multiplier: 2;
+      --v-theme-info: 33,150,243;
+      --v-theme-info-overlay-multiplier: 1;
+      --v-theme-success: 76,175,80;
+      --v-theme-success-overlay-multiplier: 1;
+      --v-theme-warning: 251,140,0;
+      --v-theme-warning-overlay-multiplier: 1;
+      --v-theme-on-background: 0,0,0;
+      --v-theme-on-surface: 0,0,0;
+      --v-theme-on-surface-bright: 0,0,0;
+      --v-theme-on-surface-light: 0,0,0;
+      --v-theme-on-primary: 255,255,255;
+      --v-theme-on-primary-darken-1: 255,255,255;
+      --v-theme-on-secondary: 255,255,255;
+      --v-theme-on-secondary-darken-1: 255,255,255;
+      --v-theme-on-error: 255,255,255;
+      --v-theme-on-info: 255,255,255;
+      --v-theme-on-success: 255,255,255;
+      --v-theme-on-warning: 255,255,255;
+      --v-border-color: 0, 0, 0;
+      --v-border-opacity: 0.12;
+      --v-high-emphasis-opacity: 0.87;
+      --v-medium-emphasis-opacity: 0.6;
+      --v-disabled-opacity: 0.38;
+      --v-idle-opacity: 0.04;
+      --v-hover-opacity: 0.04;
+      --v-focus-opacity: 0.12;
+      --v-selected-opacity: 0.08;
+      --v-activated-opacity: 0.12;
+      --v-pressed-opacity: 0.12;
+      --v-dragged-opacity: 0.08;
+      --v-theme-kbd: 33, 37, 41;
+      --v-theme-on-kbd: 255, 255, 255;
+      --v-theme-code: 245, 245, 245;
+      --v-theme-on-code: 0, 0, 0;
+    }
+    .v-theme--dark {
+      color-scheme: dark;
+      --v-theme-background: 18,18,18;
+      --v-theme-background-overlay-multiplier: 1;
+      --v-theme-surface: 33,33,33;
+      --v-theme-surface-overlay-multiplier: 1;
+      --v-theme-surface-bright: 204,191,214;
+      --v-theme-surface-bright-overlay-multiplier: 2;
+      --v-theme-surface-light: 66,66,66;
+      --v-theme-surface-light-overlay-multiplier: 1;
+      --v-theme-surface-variant: 163,163,163;
+      --v-theme-surface-variant-overlay-multiplier: 2;
+      --v-theme-on-surface-variant: 66,66,66;
+      --v-theme-primary: 33,150,243;
+      --v-theme-primary-overlay-multiplier: 2;
+      --v-theme-primary-darken-1: 39,124,193;
+      --v-theme-primary-darken-1-overlay-multiplier: 2;
+      --v-theme-secondary: 84,182,178;
+      --v-theme-secondary-overlay-multiplier: 2;
+      --v-theme-secondary-darken-1: 72,169,166;
+      --v-theme-secondary-darken-1-overlay-multiplier: 2;
+      --v-theme-error: 207,102,121;
+      --v-theme-error-overlay-multiplier: 2;
+      --v-theme-info: 33,150,243;
+      --v-theme-info-overlay-multiplier: 2;
+      --v-theme-success: 76,175,80;
+      --v-theme-success-overlay-multiplier: 2;
+      --v-theme-warning: 251,140,0;
+      --v-theme-warning-overlay-multiplier: 2;
+      --v-theme-on-background: 255,255,255;
+      --v-theme-on-surface: 255,255,255;
+      --v-theme-on-surface-bright: 0,0,0;
+      --v-theme-on-surface-light: 255,255,255;
+      --v-theme-on-primary: 255,255,255;
+      --v-theme-on-primary-darken-1: 255,255,255;
+      --v-theme-on-secondary: 255,255,255;
+      --v-theme-on-secondary-darken-1: 255,255,255;
+      --v-theme-on-error: 255,255,255;
+      --v-theme-on-info: 255,255,255;
+      --v-theme-on-success: 255,255,255;
+      --v-theme-on-warning: 255,255,255;
+      --v-border-color: 255, 255, 255;
+      --v-border-opacity: 0.12;
+      --v-high-emphasis-opacity: 1;
+      --v-medium-emphasis-opacity: 0.7;
+      --v-disabled-opacity: 0.5;
+      --v-idle-opacity: 0.1;
+      --v-hover-opacity: 0.04;
+      --v-focus-opacity: 0.12;
+      --v-selected-opacity: 0.08;
+      --v-activated-opacity: 0.12;
+      --v-pressed-opacity: 0.16;
+      --v-dragged-opacity: 0.08;
+      --v-theme-kbd: 33, 37, 41;
+      --v-theme-on-kbd: 255, 255, 255;
+      --v-theme-code: 52, 52, 52;
+      --v-theme-on-code: 204, 204, 204;
+    }
+    .v-theme--recipeTheme {
+      color-scheme: normal;
+      --v-theme-background: 255,253,231;
+      --v-theme-background-overlay-multiplier: 1;
+      --v-theme-surface: 255,255,255;
+      --v-theme-surface-overlay-multiplier: 1;
+      --v-theme-surface-bright: 255,255,255;
+      --v-theme-surface-bright-overlay-multiplier: 1;
+      --v-theme-surface-light: 238,238,238;
+      --v-theme-surface-light-overlay-multiplier: 1;
+      --v-theme-surface-variant: 66,66,66;
+      --v-theme-surface-variant-overlay-multiplier: 2;
+      --v-theme-on-surface-variant: 238,238,238;
+      --v-theme-primary: 76,175,80;
+      --v-theme-primary-overlay-multiplier: 1;
+      --v-theme-primary-darken-1: 31,85,146;
+      --v-theme-primary-darken-1-overlay-multiplier: 2;
+      --v-theme-secondary: 255,235,59;
+      --v-theme-secondary-overlay-multiplier: 1;
+      --v-theme-secondary-darken-1: 1,135,134;
+      --v-theme-secondary-darken-1-overlay-multiplier: 1;
+      --v-theme-error: 244,67,54;
+      --v-theme-error-overlay-multiplier: 1;
+      --v-theme-info: 33,150,243;
+      --v-theme-info-overlay-multiplier: 1;
+      --v-theme-success: 76,175,80;
+      --v-theme-success-overlay-multiplier: 1;
+      --v-theme-warning: 255,152,0;
+      --v-theme-warning-overlay-multiplier: 1;
+      --v-theme-on-background: 0,0,0;
+      --v-theme-on-surface: 0,0,0;
+      --v-theme-on-surface-bright: 0,0,0;
+      --v-theme-on-surface-light: 0,0,0;
+      --v-theme-on-primary: 255,255,255;
+      --v-theme-on-primary-darken-1: 255,255,255;
+      --v-theme-on-secondary: 0,0,0;
+      --v-theme-on-secondary-darken-1: 255,255,255;
+      --v-theme-on-error: 255,255,255;
+      --v-theme-on-info: 255,255,255;
+      --v-theme-on-success: 255,255,255;
+      --v-theme-on-warning: 0,0,0;
+      --v-border-color: 0, 0, 0;
+      --v-border-opacity: 0.12;
+      --v-high-emphasis-opacity: 0.87;
+      --v-medium-emphasis-opacity: 0.6;
+      --v-disabled-opacity: 0.38;
+      --v-idle-opacity: 0.04;
+      --v-hover-opacity: 0.04;
+      --v-focus-opacity: 0.12;
+      --v-selected-opacity: 0.08;
+      --v-activated-opacity: 0.12;
+      --v-pressed-opacity: 0.12;
+      --v-dragged-opacity: 0.08;
+      --v-theme-kbd: 33, 37, 41;
+      --v-theme-on-kbd: 255, 255, 255;
+      --v-theme-code: 245, 245, 245;
+      --v-theme-on-code: 0, 0, 0;
+      --v-font-family: Poppins, sans-serif;
+    }
+    .bg-background {
+      --v-theme-overlay-multiplier: var(--v-theme-background-overlay-multiplier);
+      background-color: rgb(var(--v-theme-background)) !important;
+      color: rgb(var(--v-theme-on-background)) !important;
+    }
+    .bg-surface {
+      --v-theme-overlay-multiplier: var(--v-theme-surface-overlay-multiplier);
+      background-color: rgb(var(--v-theme-surface)) !important;
+      color: rgb(var(--v-theme-on-surface)) !important;
+    }
+    .bg-surface-bright {
+      --v-theme-overlay-multiplier: var(--v-theme-surface-bright-overlay-multiplier);
+      background-color: rgb(var(--v-theme-surface-bright)) !important;
+      color: rgb(var(--v-theme-on-surface-bright)) !important;
+    }
+    .bg-surface-light {
+      --v-theme-overlay-multiplier: var(--v-theme-surface-light-overlay-multiplier);
+      background-color: rgb(var(--v-theme-surface-light)) !important;
+      color: rgb(var(--v-theme-on-surface-light)) !important;
+    }
+    .bg-surface-variant {
+      --v-theme-overlay-multiplier: var(--v-theme-surface-variant-overlay-multiplier);
+      background-color: rgb(var(--v-theme-surface-variant)) !important;
+      color: rgb(var(--v-theme-on-surface-variant)) !important;
+    }
+    .bg-primary {
+      --v-theme-overlay-multiplier: var(--v-theme-primary-overlay-multiplier);
+      background-color: rgb(var(--v-theme-primary)) !important;
+      color: rgb(var(--v-theme-on-primary)) !important;
+    }
+    .bg-primary-darken-1 {
+      --v-theme-overlay-multiplier: var(--v-theme-primary-darken-1-overlay-multiplier);
+      background-color: rgb(var(--v-theme-primary-darken-1)) !important;
+      color: rgb(var(--v-theme-on-primary-darken-1)) !important;
+    }
+    .bg-secondary {
+      --v-theme-overlay-multiplier: var(--v-theme-secondary-overlay-multiplier);
+      background-color: rgb(var(--v-theme-secondary)) !important;
+      color: rgb(var(--v-theme-on-secondary)) !important;
+    }
+    .bg-secondary-darken-1 {
+      --v-theme-overlay-multiplier: var(--v-theme-secondary-darken-1-overlay-multiplier);
+      background-color: rgb(var(--v-theme-secondary-darken-1)) !important;
+      color: rgb(var(--v-theme-on-secondary-darken-1)) !important;
+    }
+    .bg-error {
+      --v-theme-overlay-multiplier: var(--v-theme-error-overlay-multiplier);
+      background-color: rgb(var(--v-theme-error)) !important;
+      color: rgb(var(--v-theme-on-error)) !important;
+    }
+    .bg-info {
+      --v-theme-overlay-multiplier: var(--v-theme-info-overlay-multiplier);
+      background-color: rgb(var(--v-theme-info)) !important;
+      color: rgb(var(--v-theme-on-info)) !important;
+    }
+    .bg-success {
+      --v-theme-overlay-multiplier: var(--v-theme-success-overlay-multiplier);
+      background-color: rgb(var(--v-theme-success)) !important;
+      color: rgb(var(--v-theme-on-success)) !important;
+    }
+    .bg-warning {
+      --v-theme-overlay-multiplier: var(--v-theme-warning-overlay-multiplier);
+      background-color: rgb(var(--v-theme-warning)) !important;
+      color: rgb(var(--v-theme-on-warning)) !important;
+    }
+    .text-background {
+      color: rgb(var(--v-theme-background)) !important;
+    }
+    .border-background {
+      --v-border-color: var(--v-theme-background);
+    }
+    .text-surface {
+      color: rgb(var(--v-theme-surface)) !important;
+    }
+    .border-surface {
+      --v-border-color: var(--v-theme-surface);
+    }
+    .text-surface-bright {
+      color: rgb(var(--v-theme-surface-bright)) !important;
+    }
+    .border-surface-bright {
+      --v-border-color: var(--v-theme-surface-bright);
+    }
+    .text-surface-light {
+      color: rgb(var(--v-theme-surface-light)) !important;
+    }
+    .border-surface-light {
+      --v-border-color: var(--v-theme-surface-light);
+    }
+    .text-surface-variant {
+      color: rgb(var(--v-theme-surface-variant)) !important;
+    }
+    .border-surface-variant {
+      --v-border-color: var(--v-theme-surface-variant);
+    }
+    .on-surface-variant {
+      color: rgb(var(--v-theme-on-surface-variant)) !important;
+    }
+    .text-primary {
+      color: rgb(var(--v-theme-primary)) !important;
+    }
+    .border-primary {
+      --v-border-color: var(--v-theme-primary);
+    }
+    .text-primary-darken-1 {
+      color: rgb(var(--v-theme-primary-darken-1)) !important;
+    }
+    .border-primary-darken-1 {
+      --v-border-color: var(--v-theme-primary-darken-1);
+    }
+    .text-secondary {
+      color: rgb(var(--v-theme-secondary)) !important;
+    }
+    .border-secondary {
+      --v-border-color: var(--v-theme-secondary);
+    }
+    .text-secondary-darken-1 {
+      color: rgb(var(--v-theme-secondary-darken-1)) !important;
+    }
+    .border-secondary-darken-1 {
+      --v-border-color: var(--v-theme-secondary-darken-1);
+    }
+    .text-error {
+      color: rgb(var(--v-theme-error)) !important;
+    }
+    .border-error {
+      --v-border-color: var(--v-theme-error);
+    }
+    .text-info {
+      color: rgb(var(--v-theme-info)) !important;
+    }
+    .border-info {
+      --v-border-color: var(--v-theme-info);
+    }
+    .text-success {
+      color: rgb(var(--v-theme-success)) !important;
+    }
+    .border-success {
+      --v-border-color: var(--v-theme-success);
+    }
+    .text-warning {
+      color: rgb(var(--v-theme-warning)) !important;
+    }
+    .border-warning {
+      --v-border-color: var(--v-theme-warning);
+    }
+    .on-background {
+      color: rgb(var(--v-theme-on-background)) !important;
+    }
+    .on-surface {
+      color: rgb(var(--v-theme-on-surface)) !important;
+    }
+    .on-surface-bright {
+      color: rgb(var(--v-theme-on-surface-bright)) !important;
+    }
+    .on-surface-light {
+      color: rgb(var(--v-theme-on-surface-light)) !important;
+    }
+    .on-primary {
+      color: rgb(var(--v-theme-on-primary)) !important;
+    }
+    .on-primary-darken-1 {
+      color: rgb(var(--v-theme-on-primary-darken-1)) !important;
+    }
+    .on-secondary {
+      color: rgb(var(--v-theme-on-secondary)) !important;
+    }
+    .on-secondary-darken-1 {
+      color: rgb(var(--v-theme-on-secondary-darken-1)) !important;
+    }
+    .on-error {
+      color: rgb(var(--v-theme-on-error)) !important;
+    }
+    .on-info {
+      color: rgb(var(--v-theme-on-info)) !important;
+    }
+    .on-success {
+      color: rgb(var(--v-theme-on-success)) !important;
+    }
+    .on-warning {
+      color: rgb(var(--v-theme-on-warning)) !important;
+    }
+</style>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/styles/main.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/components/NavigationBar.vue?vue&type=style&index=0&scoped=e29e7744&lang.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/@mdi/font/css/materialdesignicons.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VCode/VCode.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VKbd/VKbd.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/directives/ripple/VRipple.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VApp/VApp.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VBottomNavigation/VBottomNavigation.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VAvatar/VAvatar.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VBottomSheet/VBottomSheet.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VBreadcrumbs/VBreadcrumbs.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VBtnToggle/VBtnToggle.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VBtnGroup/VBtnGroup.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VCheckbox/VCheckbox.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VChipGroup/VChipGroup.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VChip/VChip.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VCounter/VCounter.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VDataTable/VDataTable.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VDataTable/VDataTableFooter.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VDatePicker/VDatePicker.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VDatePicker/VDatePickerControls.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VDatePicker/VDatePickerMonth.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VDatePicker/VDatePickerMonths.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VDatePicker/VDatePickerHeader.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VDatePicker/VDatePickerYears.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VColorPicker/VColorPicker.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VDivider/VDivider.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VEmptyState/VEmptyState.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VExpansionPanel/VExpansionPanel.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VFooter/VFooter.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VIcon/VIcon.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VInput/VInput.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VLabel/VLabel.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VGrid/VGrid.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VItemGroup/VItemGroup.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VLayout/VLayout.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VLayout/VLayoutItem.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VLocaleProvider/VLocaleProvider.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VList/VListItem.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VMain/VMain.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VMessages/VMessages.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VNumberInput/VNumberInput.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VPagination/VPagination.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VOtpInput/VOtpInput.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VRadioGroup/VRadioGroup.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VResponsive/VResponsive.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VProgressCircular/VProgressCircular.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VRating/VRating.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VSlider/VSlider.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VSelectionControl/VSelectionControl.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VSelectionControlGroup/VSelectionControlGroup.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VSkeletonLoader/VSkeletonLoader.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VStepper/VStepperItem.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VTable/VTable.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VThemeProvider/VThemeProvider.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VTimeline/VTimeline.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VToolbar/VToolbar.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VAutocomplete/VAutocomplete.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VCard/VCard.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VProgressLinear/VProgressLinear.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VFab/VFab.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VField/VField.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VFileInput/VFileInput.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VAlert/VAlert.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VCarousel/VCarousel.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VBtn/VBtn.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VAppBar/VAppBar.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VDialog/VDialog.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VParallax/VParallax.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VImg/VImg.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VInfiniteScroll/VInfiniteScroll.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VSelect/VSelect.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VSystemBar/VSystemBar.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VVirtualScroll/VVirtualScroll.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VBadge/VBadge.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VTabs/VTab.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VSlideGroup/VSlideGroup.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VMenu/VMenu.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VSwitch/VSwitch.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VBanner/VBanner.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VSheet/VSheet.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VNavigationDrawer/VNavigationDrawer.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VTabs/VTabs.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VTextField/VTextField.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VList/VList.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VSnackbar/VSnackbar.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VTooltip/VTooltip.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VOverlay/VOverlay.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VStepper/VStepper.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VWindow/VWindow.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VSpeedDial/VSpeedDial.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VTextarea/VTextarea.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VCombobox/VCombobox.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/labs/VPicker/VPicker.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VColorPicker/VColorPickerEdit.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VColorPicker/VColorPickerSwatches.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VSlider/VSliderTrack.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VSlider/VSliderThumb.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VColorPicker/VColorPickerCanvas.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/node_modules/vuetify/lib/components/VColorPicker/VColorPickerPreview.css" crossorigin>
+<link rel="modulepreload" as="script" crossorigin href="/_nuxt/C:/School diff/Vue/Examen/Applicatie/receptenzoeker/node_modules/nuxt/dist/app/entry.js">
+<link rel="preload" as="fetch" fetchpriority="low" crossorigin="anonymous" href="/_nuxt/builds/meta/dev.json">
+<script type="module" src="/_nuxt/@vite/client" crossorigin></script>
+<script type="module" src="/_nuxt/C:/School diff/Vue/Examen/Applicatie/receptenzoeker/node_modules/nuxt/dist/app/entry.js" crossorigin></script><script>
+if (!window.__NUXT_DEVTOOLS_TIME_METRIC__) {
+  Object.defineProperty(window, '__NUXT_DEVTOOLS_TIME_METRIC__', {
+    value: {},
+    enumerable: false,
+    configurable: true,
+  })
+}
+window.__NUXT_DEVTOOLS_TIME_METRIC__.appInit = Date.now()
+</script></head><body><div id="__nuxt"><div class="v-application v-theme--recipeTheme v-layout v-layout--full-height v-locale--is-ltr" style=""><div class="v-application__wrap"><!--[--><!--[--><header class="v-toolbar v-toolbar--density-default bg-primary v-theme--recipeTheme v-locale--is-ltr v-app-bar" style="top:0;z-index:1004;transform:translateY(0%);position:fixed;transition:none !important;" dark app data-v-e29e7744><!----><!--[--><div class="v-toolbar__content" style="height:64px;"><!----><!----><!--[--><div class="v-toolbar-title v-app-bar-title" style="" data-v-e29e7744><div class="v-toolbar-title__placeholder"><!----><!--[-->Recepten zoeker<!--]--></div></div><div class="v-spacer" style="" data-v-e29e7744></div><!-- Hamburger menu rechts op mobiel --><button type="button" class="v-btn v-btn--icon v-theme--recipeTheme v-btn--density-default v-btn--size-default v-btn--variant-text d-md-none v-app-bar-nav-icon" style="" data-v-e29e7744><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><i class="mdi-menu mdi v-icon notranslate v-theme--recipeTheme v-icon--size-default" style="" aria-hidden="true"></i></span><!----><!----></button><!-- Desktop knoppen --><div class="d-none d-md-flex" data-v-e29e7744><a class="v-btn v-btn--active v-btn--flat v-theme--recipeTheme v-btn--density-default v-btn--size-default v-btn--variant-text selected mx-1" style="" href="/" aria-current="page" data-v-e29e7744><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><!--[--><!--[--> Alle recepten <!--]--><!--]--></span><!----><!----></a><a class="v-btn v-btn--flat v-theme--recipeTheme v-btn--density-default v-btn--size-default v-btn--variant-text mx-1" style="" href="/recipe-search" data-v-e29e7744><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><!--[--><!--[--> Recept opzoeken <!--]--><!--]--></span><!----><!----></a><a class="v-btn v-btn--flat v-theme--recipeTheme v-btn--density-default v-btn--size-default v-btn--variant-text mx-1" style="" href="/recipe-random" data-v-e29e7744><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><!--[--><!--[--> Willekeurig recept <!--]--><!--]--></span><!----><!----></a><a class="v-btn v-btn--flat v-theme--recipeTheme v-btn--density-default v-btn--size-default v-btn--variant-text mx-1" style="" href="/contact-us" data-v-e29e7744><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><!--[--><!--[--> Contacteer ons <!--]--><!--]--></span><!----><!----></a></div><!--]--><!----></div><!--]--><!--[--><!----><!--]--></header><!-- Navigation Drawer voor mobiel --><!--[--><nav class="v-navigation-drawer v-navigation-drawer--left v-navigation-drawer--temporary v-theme--recipeTheme v-navigation-drawer--mobile d-md-none" style="left:0;z-index:1004;transform:translateX(-256px);position:fixed;transition:none !important;" data-v-e29e7744 app><!----><!----><div class="v-navigation-drawer__content"><!--[--><div class="v-list v-theme--recipeTheme bg-transparent v-list--density-default v-list--one-line" style="" tabindex="0" role="listbox" data-v-e29e7744><!--[--><!--[--><a class="v-list-item v-list-item--active v-list-item--link v-theme--recipeTheme v-list-item--density-default v-list-item--one-line rounded-0 v-list-item--variant-text bg-yellow" style="" tabindex="-2" href="/" aria-current="page" data-v-e29e7744><!--[--><span class="v-list-item__overlay"></span><span class="v-list-item__underlay"></span><!--]--><!----><div class="v-list-item__content" data-no-activator><!----><!----><!--[--><div class="v-list-item-title" style="" data-v-e29e7744>Alle recepten</div><!--]--></div><!----></a><a class="v-list-item v-list-item--link v-theme--recipeTheme v-list-item--density-default v-list-item--one-line rounded-0 v-list-item--variant-text" style="" tabindex="-2" href="/recipe-search" data-v-e29e7744><!--[--><span class="v-list-item__overlay"></span><span class="v-list-item__underlay"></span><!--]--><!----><div class="v-list-item__content" data-no-activator><!----><!----><!--[--><div class="v-list-item-title" style="" data-v-e29e7744>Recept opzoeken</div><!--]--></div><!----></a><a class="v-list-item v-list-item--link v-theme--recipeTheme v-list-item--density-default v-list-item--one-line rounded-0 v-list-item--variant-text" style="" tabindex="-2" href="/recipe-random" data-v-e29e7744><!--[--><span class="v-list-item__overlay"></span><span class="v-list-item__underlay"></span><!--]--><!----><div class="v-list-item__content" data-no-activator><!----><!----><!--[--><div class="v-list-item-title" style="" data-v-e29e7744>Willekeurig recept</div><!--]--></div><!----></a><a class="v-list-item v-list-item--link v-theme--recipeTheme v-list-item--density-default v-list-item--one-line rounded-0 v-list-item--variant-text" style="" tabindex="-2" href="/contact-us" data-v-e29e7744><!--[--><span class="v-list-item__overlay"></span><span class="v-list-item__underlay"></span><!--]--><!----><div class="v-list-item__content" data-no-activator><!----><!----><!--[--><div class="v-list-item-title" style="" data-v-e29e7744>Contacteer ons</div><!--]--></div><!----></a><!--]--><!--]--></div><!--]--></div><!----></nav><!----><!--]--><!--]--><main class="v-main" style="--v-layout-left:0px;--v-layout-right:0px;--v-layout-top:0px;--v-layout-bottom:0px;transition:none !important;"><!--[--><div class="v-container v-locale--is-ltr py-10" style=""><!-- Categories Section (always visible) --><div class="v-slide-group v-slide-group--mobile" style="" tabindex="0"><!----><div class="v-slide-group__container"><div class="v-slide-group__content"><!--[--><!--[--><!--]--><!--]--></div></div><!----></div><!-- Recipes Section with Loading State --><div class="mt-6 position-relative" style="min-height:300px;"><!-- Loading Overlay (only for recipes) --><div class="v-row" style=""><!--[--><div class="v-col-sm-6 v-col-md-4 v-col-12" style=""><div class="v-skeleton-loader v-theme--recipeTheme" style="" arialive="polite" arialabel="Loading..." role="alert"><!--[--><!--[--><div class="v-skeleton-loader__bone v-skeleton-loader__image"><!--[--><!--]--></div><!--]--><!--[--><div class="v-skeleton-loader__bone v-skeleton-loader__heading"><!--[--><!--]--></div><!--]--><!--]--></div></div><div class="v-col-sm-6 v-col-md-4 v-col-12" style=""><div class="v-skeleton-loader v-theme--recipeTheme" style="" arialive="polite" arialabel="Loading..." role="alert"><!--[--><!--[--><div class="v-skeleton-loader__bone v-skeleton-loader__image"><!--[--><!--]--></div><!--]--><!--[--><div class="v-skeleton-loader__bone v-skeleton-loader__heading"><!--[--><!--]--></div><!--]--><!--]--></div></div><div class="v-col-sm-6 v-col-md-4 v-col-12" style=""><div class="v-skeleton-loader v-theme--recipeTheme" style="" arialive="polite" arialabel="Loading..." role="alert"><!--[--><!--[--><div class="v-skeleton-loader__bone v-skeleton-loader__image"><!--[--><!--]--></div><!--]--><!--[--><div class="v-skeleton-loader__bone v-skeleton-loader__heading"><!--[--><!--]--></div><!--]--><!--]--></div></div><div class="v-col-sm-6 v-col-md-4 v-col-12" style=""><div class="v-skeleton-loader v-theme--recipeTheme" style="" arialive="polite" arialabel="Loading..." role="alert"><!--[--><!--[--><div class="v-skeleton-loader__bone v-skeleton-loader__image"><!--[--><!--]--></div><!--]--><!--[--><div class="v-skeleton-loader__bone v-skeleton-loader__heading"><!--[--><!--]--></div><!--]--><!--]--></div></div><div class="v-col-sm-6 v-col-md-4 v-col-12" style=""><div class="v-skeleton-loader v-theme--recipeTheme" style="" arialive="polite" arialabel="Loading..." role="alert"><!--[--><!--[--><div class="v-skeleton-loader__bone v-skeleton-loader__image"><!--[--><!--]--></div><!--]--><!--[--><div class="v-skeleton-loader__bone v-skeleton-loader__heading"><!--[--><!--]--></div><!--]--><!--]--></div></div><div class="v-col-sm-6 v-col-md-4 v-col-12" style=""><div class="v-skeleton-loader v-theme--recipeTheme" style="" arialive="polite" arialabel="Loading..." role="alert"><!--[--><!--[--><div class="v-skeleton-loader__bone v-skeleton-loader__image"><!--[--><!--]--></div><!--]--><!--[--><div class="v-skeleton-loader__bone v-skeleton-loader__heading"><!--[--><!--]--></div><!--]--><!--]--></div></div><!--]--></div><!-- Recipes Grid --><!--v-if--><!-- Empty State --><!--v-if--></div></div><!--]--></main><footer class="v-footer v-theme--recipeTheme bg-primary w-100" style="bottom:0;z-index:1004;transform:translateY(0px);position:fixed;"><div class="v-row v-row--no-gutters px-4 py-2 w-100" style=""><div class="v-col d-flex justify-space-between align-center" style=""><h2 class="ma-0">Recepten zoeker</h2><p class="ma-0">© 2025 Mijn App</p></div></div></footer><!--]--></div></div></div><div id="teleports"></div><script type="application/json" data-nuxt-data="nuxt-app" data-ssr="true" id="__NUXT_DATA__">[["ShallowReactive",1],{"data":2,"state":4,"once":8,"_errors":9,"serverRendered":11,"path":12},["ShallowReactive",3],{},["Reactive",5],{"$s__nuxt_devtools__":6},{"timeSsrStart":7},1744877602208,["Set"],["ShallowReactive",10],{},true,"/"]</script>
+<script>window.__NUXT__={};window.__NUXT__.config={public:{},app:{baseURL:"/",buildId:"dev",buildAssetsDir:"/_nuxt/",cdnURL:""}}</script></body></html>
